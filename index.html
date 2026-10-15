@@ -1,0 +1,1398 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="AyudaSoporte brinda orientación informativa independiente sobre dudas frecuentes en plataformas digitales de compra y pago. Consultas por WhatsApp.">
+  <meta name="theme-color" content="#0c3160">
+
+  <title>AyudaSoporte | Orientación informativa independiente</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0c3160;
+      --blue: #086cc7;
+      --sky: #e9f4ff;
+      --ink: #163454;
+      --muted: #5d7188;
+      --border: #dce6ef;
+      --bg: #f5f9fd;
+      --green: #14b86a;
+      --green-dark: #0b9654;
+      --white: #fff;
+      --shadow: 0 14px 35px rgba(17,51,90,.09);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font: 16px/1.65 'DM Sans', sans-serif;
+      background: var(--white);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button { font: inherit; }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    .section { padding: 86px 0; }
+
+    .section--soft { background: var(--bg); }
+
+    .section-title {
+      max-width: 710px;
+      margin: 0 auto 44px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2, h3 {
+      font-family: Manrope, sans-serif;
+      line-height: 1.18;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4.6rem);
+      letter-spacing: -2.4px;
+      margin: 19px 0 21px;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+      letter-spacing: -1.4px;
+      margin: 13px 0;
+    }
+
+    h3 {
+      font-size: 1.08rem;
+      margin: 14px 0 8px;
+    }
+
+    p { color: var(--muted); }
+
+    .section-title p { margin: 0; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      padding: 14px 21px;
+      font-weight: 800;
+      font-size: .92rem;
+      transition: transform .2s, background .2s, box-shadow .2s;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-green {
+      background: var(--green);
+      color: white;
+      box-shadow: 0 9px 22px rgba(20,184,106,.23);
+    }
+
+    .btn-green:hover { background: var(--green-dark); }
+
+    .btn-outline {
+      background: white;
+      color: var(--blue);
+      border-color: #bfd7ef;
+    }
+
+    .btn-outline:hover { background: var(--sky); }
+
+    .btn svg, .brand svg { flex-shrink: 0; }
+
+    /* ENCABEZADO */
+
+    .header {
+      height: 82px;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      gap: 9px;
+      align-items: center;
+      color: var(--navy);
+      font-family: Manrope, sans-serif;
+      font-weight: 800;
+      font-size: 1.24rem;
+      letter-spacing: -.8px;
+      white-space: nowrap;
+    }
+
+    .brand strong { color: var(--blue); }
+
+    .brand-icon {
+      display: grid;
+      place-items: center;
+      width: 39px;
+      height: 39px;
+      border-radius: 12px;
+      background: var(--sky);
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a:not(.btn) {
+      font-size: .87rem;
+      font-weight: 700;
+      color: #415e7b;
+    }
+
+    .nav-links a:not(.btn):hover { color: var(--blue); }
+
+    .nav-cta { padding: 11px 16px; }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 10px;
+      padding: 9px;
+      cursor: pointer;
+      color: var(--navy);
+    }
+
+    /* SECCIÓN PRINCIPAL */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(
+        125deg,
+        #092c58 0%,
+        #0b5596 70%,
+        #0874c4 100%
+      );
+      color: white;
+      padding: 92px 0 99px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      right: -130px;
+      top: -230px;
+      border: 95px solid rgba(255,255,255,.045);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .hero .eyebrow { color: #9fe4ff; }
+
+    .hero h1 { max-width: 660px; }
+
+    .hero-lead {
+      color: #d4e9fc;
+      max-width: 560px;
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 28px 0;
+    }
+
+    .hero .btn-outline { color: var(--navy); }
+
+    .hero-note {
+      border-left: 3px solid #67d5ac;
+      background: rgba(255,255,255,.08);
+      padding: 15px 19px;
+      border-radius: 0 10px 10px 0;
+      color: #e2eff9;
+      font-size: .88rem;
+      max-width: 565px;
+    }
+
+    .hero-note strong { color: white; }
+
+    .hero-art {
+      min-height: 410px;
+      display: grid;
+      place-items: center;
+    }
+
+    .dashboard {
+      width: min(100%, 430px);
+      background: #fff;
+      color: var(--ink);
+      border-radius: 24px;
+      padding: 25px;
+      box-shadow: 0 28px 70px rgba(0,17,45,.24);
+      transform: rotate(2deg);
+    }
+
+    .dashboard-head {
+      display: flex;
+      gap: 13px;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+
+    .avatar {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      background: var(--sky);
+      color: var(--blue);
+    }
+
+    .dashboard-head strong {
+      display: block;
+      font-family: Manrope;
+    }
+
+    .dashboard-head small { color: var(--muted); }
+
+    .status {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      background: #e3faed;
+      color: #0a9051;
+      border-radius: 50px;
+      font-size: .73rem;
+      font-weight: 800;
+      padding: 5px 10px;
+      margin-top: 9px;
+    }
+
+    .status::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #12b86a;
+    }
+
+    .chat-bubble {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #f2f7fc;
+      margin-top: 16px;
+      color: #405872;
+      font-size: .9rem;
+    }
+
+    .chat-bubble--answer {
+      background: #e7f7ee;
+      color: #176143;
+      margin-left: 30px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 9px;
+      margin-top: 19px;
+    }
+
+    .mini-grid span {
+      background: #f5f9fd;
+      text-align: center;
+      padding: 11px 5px;
+      font-size: .73rem;
+      font-weight: 700;
+      border-radius: 10px;
+      color: var(--navy);
+    }
+
+    /* TARJETAS */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: white;
+      padding: 27px;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .card p {
+      font-size: .92rem;
+      margin-bottom: 0;
+    }
+
+    .card-icon {
+      width: 47px;
+      height: 47px;
+      display: grid;
+      place-items: center;
+      background: var(--sky);
+      color: var(--blue);
+      border-radius: 13px;
+      font-size: 1.5rem;
+    }
+
+    /* BENEFICIOS */
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 19px;
+    }
+
+    .benefit {
+      text-align: center;
+      background: white;
+      padding: 32px 22px;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+    }
+
+    .benefit .card-icon { margin: auto; }
+
+    .benefit p {
+      font-size: .91rem;
+      margin-bottom: 0;
+    }
+
+    /* RESEÑAS */
+
+    .reviews-warning {
+      font-size: .84rem;
+      background: #fff8e8;
+      border: 1px solid #f3deb0;
+      padding: 11px 15px;
+      border-radius: 11px;
+      color: #775a25;
+      margin: -18px 0 22px;
+    }
+
+    .review-stars {
+      color: #f6ab2f;
+      font-size: 1.16rem;
+      letter-spacing: 3px;
+    }
+
+    .review blockquote {
+      margin: 14px 0 19px;
+      color: #435b75;
+      font-style: italic;
+    }
+
+    .review footer {
+      border-top: 1px solid var(--border);
+      padding-top: 15px;
+      font-size: .87rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    /* PREGUNTAS FRECUENTES */
+
+    .faq-wrap {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .faq {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 18px 22px;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .faq summary::after {
+      content: '+';
+      font-size: 23px;
+      color: var(--blue);
+    }
+
+    .faq[open] summary::after { content: '−'; }
+
+    .faq summary::-webkit-details-marker { display: none; }
+
+    .faq p {
+      padding: 0 22px 18px;
+      margin: 0;
+      font-size: .92rem;
+    }
+
+    /* CONTACTO */
+
+    .contact-banner {
+      background: linear-gradient(125deg,#0b315f,#0b68b9);
+      color: white;
+      border-radius: 24px;
+      text-align: center;
+      padding: 55px 24px;
+    }
+
+    .contact-banner h2 { margin-bottom: 12px; }
+
+    .contact-banner p {
+      color: #d8ebfd;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+
+    .contact-phone {
+      color: white;
+      font-weight: 800;
+      display: block;
+      margin-top: 18px;
+    }
+
+    /* PIE DE PÁGINA */
+
+    .footer {
+      background: #0c294b;
+      color: white;
+      padding: 54px 0 22px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    .footer p, .footer a {
+      color: #bdcfe0;
+      font-size: .9rem;
+    }
+
+    .footer a:hover { color: white; }
+
+    .footer h3 {
+      margin-top: 0;
+      font-size: .95rem;
+    }
+
+    .footer .brand {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.14);
+      margin-top: 36px;
+      padding-top: 20px;
+      color: #b6cbdc;
+      font-size: .79rem;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      color: #b6cbdc;
+      margin-bottom: 5px;
+      font-size: .79rem;
+    }
+
+    /* BOTÓN FLOTANTE WHATSAPP */
+
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 50;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: #12c66a;
+      box-shadow: 0 10px 27px rgba(6,116,61,.35);
+      transition: transform .2s;
+    }
+
+    .wa-float:hover { transform: scale(1.08); }
+
+    .wa-float svg {
+      width: 31px;
+      height: 31px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* DISEÑO RESPONSIVE */
+
+    @media(max-width:980px) {
+      .nav-links { gap: 14px; }
+
+      .nav-links a:not(.btn) { font-size: .79rem; }
+
+      .hero-grid { gap: 25px; }
+
+      .hero-art { min-height: 350px; }
+
+      .cards {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+    }
+
+    @media(max-width:760px) {
+      .header { height: 70px; }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 69px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 14px 20px 20px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links a:not(.btn) {
+        font-size: .94rem;
+        padding: 12px 4px;
+      }
+
+      .nav-cta { margin-top: 8px; }
+
+      .hero { padding: 65px 0 75px; }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero h1 { letter-spacing: -1.5px; }
+
+      .hero-art { min-height: auto; }
+
+      .dashboard {
+        max-width: 460px;
+        transform: none;
+      }
+
+      .section { padding: 62px 0; }
+
+      .cards, .benefits {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid>div:first-child {
+        grid-column: 1/-1;
+      }
+    }
+
+    @media(max-width:520px) {
+      .container {
+        width: min(100% - 30px,1160px);
+      }
+
+      h1 {
+        font-size: clamp(2.15rem,11vw,3rem);
+      }
+
+      .hero-actions { flex-direction: column; }
+
+      .hero-actions .btn { width: 100%; }
+
+      .dashboard { padding: 19px; }
+
+      .mini-grid { gap: 5px; }
+
+      .mini-grid span { font-size: .65rem; }
+
+      .cards, .benefits, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid>div:first-child {
+        grid-column: auto;
+      }
+
+      .section-title { margin-bottom: 29px; }
+
+      .card { padding: 23px; }
+
+      .wa-float {
+        width: 56px;
+        height: 56px;
+        bottom: 18px;
+        right: 16px;
+      }
+
+      .contact-banner { padding: 43px 18px; }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html { scroll-behavior: auto; }
+
+      *, *::before, *::after {
+        transition: none!important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ICONO WHATSAPP -->
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="wa" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M20.52 3.48A11.9 11.9 0 0 0 12.04 0C5.43 0 .05 5.37.04 11.98c0 2.11.55 4.17 1.6 5.99L0 24l6.2-1.63a12 12 0 0 0 5.83 1.49h.01c6.61 0 11.99-5.38 12-11.99a11.9 11.9 0 0 0-3.52-8.39ZM12.04 21.83a9.93 9.93 0 0 1-5.05-1.39l-.36-.21-3.68.97.98-3.59-.23-.37a9.94 9.94 0 0 1-1.53-5.26c0-5.49 4.48-9.96 9.97-9.96a9.9 9.9 0 0 1 7.04 2.92 9.9 9.9 0 0 1 2.91 7.05c0 5.49-4.48 9.95-9.97 9.95Zm5.46-7.45c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.34.22-.63.08a8.2 8.2 0 0 1-2.4-1.48 9 9 0 0 1-1.66-2.06c-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.66-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.49 1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.31 1.27.49 1.7.62.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.18-1.42-.08-.12-.28-.2-.58-.35Z"/>
+    </symbol>
+  </svg>
+
+  <!-- ENCABEZADO -->
+
+  <header class="header">
+    <div class="container nav">
+
+      <a class="brand" href="#inicio" aria-label="AyudaSoporte, ir al inicio">
+        <span class="brand-icon">✦</span>
+        <span>Ayuda<strong>Soporte</strong></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >☰</button>
+
+      <nav id="navLinks" class="nav-links" aria-label="Navegación principal">
+
+        <a href="#servicios">Consultas</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#resenas">Reseñas</a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+
+        <!-- WHATSAPP -->
+        <a
+          class="btn btn-green nav-cta whatsapp-link"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg width="19" height="19">
+            <use href="#wa"/>
+          </svg>
+          Consultar por WhatsApp
+        </a>
+
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- SECCIÓN PRINCIPAL -->
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <span class="eyebrow">
+            ● Orientación informativa independiente
+          </span>
+
+          <h1>
+            Respuestas claras para tus dudas digitales.
+          </h1>
+
+          <p class="hero-lead">
+            Te ayudamos a comprender procesos habituales
+            relacionados con cuentas, pagos, devoluciones
+            y reclamos en plataformas digitales de compra y pago.
+          </p>
+
+          <div class="hero-actions">
+
+            <!-- WHATSAPP -->
+            <a
+              class="btn btn-green whatsapp-link"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg width="20" height="20">
+                <use href="#wa"/>
+              </svg>
+              Consultar por WhatsApp
+            </a>
+
+            <a href="#servicios" class="btn btn-outline">
+              Conocer las consultas ↓
+            </a>
+
+          </div>
+
+          <div class="hero-note">
+            <strong>Importante:</strong>
+            AyudaSoporte es un servicio independiente de
+            orientación informativa. No somos el soporte
+            oficial de bancos ni de plataformas de terceros
+            y no accedemos a cuentas de usuarios.
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Ilustración de una consulta informativa">
+
+          <div class="dashboard">
+
+            <div class="dashboard-head">
+              <div class="avatar" aria-hidden="true">💬</div>
+
+              <div>
+                <strong>Tu consulta, paso a paso</strong>
+
+                <small>
+                  AyudaSoporte · Orientación independiente
+                </small>
+
+                <br>
+
+                <span class="status">
+                  Consultas por WhatsApp
+                </span>
+              </div>
+            </div>
+
+            <div class="chat-bubble">
+              Hola, tengo una duda sobre el estado de un reembolso.
+            </div>
+
+            <div class="chat-bubble chat-bubble--answer">
+              Podemos explicarte los pasos generales para consultar
+              el estado en los canales oficiales de la plataforma. ✓
+            </div>
+
+            <div class="mini-grid">
+              <span>✓ Información</span>
+              <span>✓ Claridad</span>
+              <span>✓ Privacidad</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+
+    <section id="servicios" class="section">
+      <div class="container">
+
+        <div class="section-title">
+          <span class="eyebrow">Lo que hacemos</span>
+
+          <h2>Consultas frecuentes que atendemos</h2>
+
+          <p>
+            Información práctica para orientarte y comprender
+            las opciones disponibles.
+          </p>
+        </div>
+
+        <div class="cards">
+
+          <article class="card">
+            <div class="card-icon">◎</div>
+            <h3>Estado de cuentas</h3>
+            <p>
+              Orientación sobre procesos habituales relacionados
+              con el estado de cuentas y opciones disponibles.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">▤</div>
+            <h3>Pagos y transferencias</h3>
+            <p>
+              Explicación de pasos generales para identificar
+              situaciones frecuentes en operaciones digitales.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">↺</div>
+            <h3>Reembolsos y devoluciones</h3>
+            <p>
+              Información general sobre procedimientos habituales
+              y dónde gestionarlos oficialmente.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">♢</div>
+            <h3>Verificación de datos</h3>
+            <p>
+              Información sobre requisitos generales,
+              sin solicitar contraseñas ni códigos de seguridad.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">☏</div>
+            <h3>Consultas sobre reclamos</h3>
+            <p>
+              Orientación sobre el funcionamiento de los
+              canales y procedimientos de reclamo.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚙</div>
+            <h3>Configuración de cuentas</h3>
+            <p>
+              Información básica para comprender opciones
+              y ajustes disponibles en plataformas.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+
+    <section id="nosotros" class="section section--soft">
+      <div class="container">
+
+        <div class="section-title">
+          <span class="eyebrow">Nuestro compromiso</span>
+
+          <h2>¿Por qué elegir AyudaSoporte?</h2>
+
+          <p>
+            Un espacio para comprender mejor tus opciones
+            sin confusiones.
+          </p>
+        </div>
+
+        <div class="benefits">
+
+          <div class="benefit">
+            <div class="card-icon">✦</div>
+            <h3>Orientación clara</h3>
+            <p>
+              Explicaciones sencillas para comprender
+              procesos y términos digitales.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <div class="card-icon">♧</div>
+            <h3>Atención informativa</h3>
+            <p>
+              Escuchamos tu consulta y compartimos
+              información general relevante.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <div class="card-icon">♙</div>
+            <h3>Privacidad primero</h3>
+            <p>
+              No solicitamos contraseñas, claves de acceso,
+              códigos OTP ni acceso remoto.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEÑAS -->
+
+    <section id="resenas" class="section">
+      <div class="container">
+
+        <div class="section-title">
+          <span class="eyebrow">Experiencias</span>
+
+          <h2>Opiniones sobre la orientación</h2>
+
+          <p>
+            Esta sección puede mostrar comentarios auténticos
+            de personas que hayan utilizado el servicio.
+          </p>
+        </div>
+
+        <p class="reviews-warning">
+          <strong>Nota:</strong>
+          Los siguientes textos son ejemplos de presentación.
+          Sustitúyelos por opiniones auténticas y verificables
+          antes de publicar.
+        </p>
+
+        <div class="cards">
+
+          <article class="card review">
+            <div class="review-stars" aria-label="Cinco estrellas decorativas">
+              ★★★★★
+            </div>
+
+            <blockquote>
+              “Me ayudaron a comprender mejor los pasos generales
+              y las opciones que podía consultar.”
+            </blockquote>
+
+            <footer>Ejemplo de comentario</footer>
+          </article>
+
+          <article class="card review">
+            <div class="review-stars" aria-label="Cinco estrellas decorativas">
+              ★★★★★
+            </div>
+
+            <blockquote>
+              “Recibí una explicación clara sobre dónde encontrar
+              los canales oficiales para hacer una consulta.”
+            </blockquote>
+
+            <footer>Ejemplo de comentario</footer>
+          </article>
+
+          <article class="card review">
+            <div class="review-stars" aria-label="Cinco estrellas decorativas">
+              ★★★★★
+            </div>
+
+            <blockquote>
+              “La información fue sencilla y me permitió
+              entender mejor el procedimiento.”
+            </blockquote>
+
+            <footer>Ejemplo de comentario</footer>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+
+    <section id="preguntas" class="section section--soft">
+      <div class="container">
+
+        <div class="section-title">
+          <span class="eyebrow">Preguntas frecuentes</span>
+
+          <h2>Todo lo que necesitas saber</h2>
+
+          <p>
+            Antes de iniciar una consulta, conoce
+            cómo funciona nuestro servicio.
+          </p>
+        </div>
+
+        <div class="faq-wrap">
+
+          <details class="faq">
+            <summary>
+              ¿AyudaSoporte es un servicio oficial de alguna plataforma?
+            </summary>
+            <p>
+              No. Somos un servicio de orientación informativa
+              independiente y no representamos a bancos,
+              billeteras digitales, procesadores de pago
+              ni plataformas de comercio electrónico.
+            </p>
+          </details>
+
+          <details class="faq">
+            <summary>
+              ¿Pueden ingresar a mi cuenta o gestionar un reembolso?
+            </summary>
+            <p>
+              No. No ingresamos a cuentas, no procesamos operaciones
+              ni aprobamos reembolsos. Podemos explicarte dónde
+              encontrar información y cómo acudir a los canales
+              oficiales correspondientes.
+            </p>
+          </details>
+
+          <details class="faq">
+            <summary>
+              ¿Qué datos tengo que compartir?
+            </summary>
+            <p>
+              Solo la descripción general de tu consulta.
+              Nunca envíes contraseñas, códigos SMS, PIN,
+              datos completos de tarjetas ni otra
+              información confidencial.
+            </p>
+          </details>
+
+          <details class="faq">
+            <summary>
+              ¿Cómo puedo comunicarme?
+            </summary>
+            <p>
+              Únicamente por WhatsApp al +54 9 11 6030-8810.
+              Al pulsar cualquiera de los botones verdes
+              se abrirá una conversación con ese número.
+            </p>
+          </details>
+
+          <details class="faq">
+            <summary>
+              ¿La orientación tiene algún costo?
+            </summary>
+            <p>
+              Consulta por WhatsApp las condiciones aplicables
+              antes de contratar cualquier servicio.
+              No realices pagos sin recibir previamente
+              información clara sobre el servicio y sus condiciones.
+            </p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section id="contacto" class="section">
+      <div class="container">
+
+        <div class="contact-banner">
+
+          <span class="eyebrow" style="color:#a8e4ff">
+            Estamos para orientarte
+          </span>
+
+          <h2>¿Tienes una consulta?</h2>
+
+          <p>
+            Cuéntanos brevemente qué necesitas saber.
+            Te brindamos orientación informativa para identificar
+            los pasos generales y los canales que correspondan.
+          </p>
+
+          <!-- WHATSAPP -->
+          <a
+            class="btn btn-green whatsapp-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20">
+              <use href="#wa"/>
+            </svg>
+            Escribir por WhatsApp
+          </a>
+
+          <span class="contact-phone">
+            +54 9 11 6030-8810
+          </span>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <a class="brand" href="#inicio">
+            <span class="brand-icon">✦</span>
+            <span>Ayuda<strong>Soporte</strong></span>
+          </a>
+
+          <p>
+            Servicio independiente de orientación informativa
+            para usuarios de plataformas digitales de compra y pago.
+          </p>
+        </div>
+
+        <div>
+          <h3>Enlaces</h3>
+
+          <p>
+            <a href="#servicios">Consultas</a><br>
+            <a href="#nosotros">Quiénes somos</a><br>
+            <a href="#resenas">Reseñas</a><br>
+            <a href="#preguntas">Preguntas frecuentes</a><br>
+            <a href="#privacidad">Privacidad</a>
+          </p>
+        </div>
+
+        <div>
+          <h3>Contacto</h3>
+
+          <p>
+            WhatsApp:
+            <a
+              class="whatsapp-link"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              +54 9 11 6030-8810
+            </a>
+          </p>
+
+          <p>
+            Atención mediante WhatsApp.<br>
+            Buenos Aires, Argentina.
+          </p>
+        </div>
+
+      </div>
+
+      <div
+        id="privacidad"
+        style="margin-top:28px;border-top:1px solid rgba(255,255,255,.14);padding-top:24px"
+      >
+        <h3>Privacidad y transparencia</h3>
+
+        <p>
+          No solicitamos credenciales, contraseñas ni códigos
+          de verificación. Si nos escribes por WhatsApp,
+          recibimos la información que decidas compartir
+          para responder a tu consulta.
+
+          La comunicación también está sujeta a la política
+          de privacidad de WhatsApp.
+
+          Puedes solicitar información sobre tus datos o
+          pedir que eliminemos los mensajes que conservemos,
+          mediante el mismo número de contacto.
+
+          Este aviso debe completarse con la identidad del
+          responsable, base legal, plazos de conservación
+          y demás información aplicable antes de publicar.
+        </p>
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          AyudaSoporte no está afiliado ni autorizado por
+          plataformas de terceros. La orientación no reemplaza
+          la atención de sus canales oficiales.
+        </p>
+
+        © <span id="year">2026</span>
+        AyudaSoporte. Todos los derechos reservados.
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+
+  <a
+    class="wa-float whatsapp-link"
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Abrir WhatsApp de AyudaSoporte"
+  >
+    <svg aria-hidden="true">
+      <use href="#wa"/>
+    </svg>
+  </a>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    /*
+      CONFIGURACIÓN DE WHATSAPP
+
+      CAMBIA AQUÍ EL NÚMERO O EL MENSAJE
+      Y SE ACTUALIZARÁN TODOS LOS BOTONES.
+    */
+
+    const numeroWhatsApp = "5491160308810";
+
+    const mensajeWhatsApp =
+      "Hola, quiero hacer una consulta relacionada con mi tarjeta.";
+
+    const enlaceWhatsApp =
+      "https://wa.me/" +
+      numeroWhatsApp +
+      "?text=" +
+      encodeURIComponent(mensajeWhatsApp);
+
+    /*
+      ASIGNAR EL MISMO MENSAJE
+      A TODOS LOS BOTONES WHATSAPP.
+    */
+
+    document.querySelectorAll(".whatsapp-link").forEach(function(enlace) {
+      enlace.href = enlaceWhatsApp;
+    });
+
+    /*
+      MENÚ RESPONSIVE
+    */
+
+    const toggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("navLinks");
+
+    toggle.addEventListener("click", function() {
+
+      const opened = menu.classList.toggle("open");
+
+      toggle.setAttribute("aria-expanded", String(opened));
+
+      toggle.setAttribute(
+        "aria-label",
+        opened ? "Cerrar menú" : "Abrir menú"
+      );
+
+      toggle.textContent = opened ? "✕" : "☰";
+
+    });
+
+    menu.querySelectorAll("a").forEach(function(link) {
+
+      link.addEventListener("click", function() {
+
+        menu.classList.remove("open");
+
+        toggle.setAttribute("aria-expanded", "false");
+
+        toggle.setAttribute("aria-label", "Abrir menú");
+
+        toggle.textContent = "☰";
+
+      });
+
+    });
+
+    /*
+      AÑO AUTOMÁTICO
+    */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
